@@ -1,0 +1,16 @@
+{
+  "$schema": "../schema/theme.schema.json",
+  "name": "Investec Classic",
+  "dark": {
+    "background": "#0c2338",
+    "accent": "#5fc1cc",
+    "text": "#ffffff",
+    "mutedText": "#b6c4d1"
+  },
+  "light": {
+    "background": "#f3efe7",
+    "accent": "#22717c",
+    "text": "#0c2338",
+    "mutedText": "#4a5c6b"
+  }
+}

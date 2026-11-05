@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schema/bounty.schema.json",
+  "title": "IoT Code Bounty",
+  "shareTitle": "Investec Developer IoT Code Bounty",
+  "status": "active",
+  "demo": false,
+  "theme": "bounty-gold",
+  "challenge": "Bring programmable banking into the real world",
+  "deadline": "2027-01-31",
+  "link": "https://investec.gitbook.io/programmable-banking-community-wiki/get-building/build-events",
+  "fields": { "githubUsername": true }
+}

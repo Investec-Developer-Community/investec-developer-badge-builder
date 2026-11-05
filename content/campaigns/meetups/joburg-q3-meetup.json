@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schema/meetup.schema.json",
+  "title": "Community Meetup | Q3 2026",
+  "shareTitle": "Investec Developer Community Meetup",
+  "status": "archived",
+  "demo": false,
+  "theme": "investec-classic",
+  "date": "2026-08-23",
+  "venue": "Investec Sandton, 100 Greyston Road",
+  "venueShort": "Investec Sandton",
+  "city": "Johannesburg",
+  "link": "https://luma.com/pb-community"
+}

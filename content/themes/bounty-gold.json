@@ -1,0 +1,16 @@
+{
+  "$schema": "../schema/theme.schema.json",
+  "name": "Bounty Gold",
+  "dark": {
+    "background": "#0c2338",
+    "accent": "#d6b25e",
+    "text": "#ffffff",
+    "mutedText": "#b6c4d1"
+  },
+  "light": {
+    "background": "#f6f1e6",
+    "accent": "#86621a",
+    "text": "#0c2338",
+    "mutedText": "#4a5c6b"
+  }
+}

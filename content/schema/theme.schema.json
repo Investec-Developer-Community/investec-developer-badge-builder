@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Badge theme (colour palettes)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "dark",
+    "light"
+  ],
+  "definitions": {
+    "hex": {
+      "type": "string",
+      "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background",
+        "accent",
+        "text",
+        "mutedText"
+      ],
+      "properties": {
+        "background": {
+          "$ref": "#/definitions/hex",
+          "description": "Flat badge background"
+        },
+        "gradient": {
+          "deprecated": true,
+          "description": "Accepted with a warning for one release, then remove this field; backgrounds are flat"
+        },
+        "accent": {
+          "$ref": "#/definitions/hex"
+        },
+        "text": {
+          "$ref": "#/definitions/hex"
+        },
+        "mutedText": {
+          "$ref": "#/definitions/hex"
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "pattern": "\\S",
+      "x-trim": true
+    },
+    "font": {
+      "deprecated": true,
+      "description": "Accepted with a warning for one release, then remove this field; the renderer ignores it"
+    },
+    "pattern": {
+      "deprecated": true,
+      "description": "Accepted with a warning for one release, then remove this field; the renderer ignores it"
+    },
+    "photoShape": {
+      "deprecated": true,
+      "description": "Accepted with a warning for one release, then remove this field; portraits are circular"
+    },
+    "ribbonText": {
+      "deprecated": true,
+      "description": "Accepted with a warning for one release, then remove this field; the renderer ignores it"
+    },
+    "stickers": {
+      "deprecated": true,
+      "description": "Accepted with a warning for one release, then remove this field; the renderer ignores it"
+    },
+    "dark": {
+      "$ref": "#/definitions/palette"
+    },
+    "light": {
+      "$ref": "#/definitions/palette"
+    }
+  }
+}

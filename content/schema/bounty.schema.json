@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bounty campaign",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "challenge", "deadline"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 60, "pattern": "\\S", "x-trim": true },
+    "shareTitle": { "type": "string", "minLength": 1, "maxLength": 60, "pattern": "\\S", "x-trim": true, "description": "Optional event name for share captions, e.g. \"Investec Developer IoT Code Bounty\". Defaults to title" },
+    "status": { "enum": ["draft", "active", "archived", null], "default": "draft", "description": "draft = hidden, active = listed through the deadline, archived = hidden from the list but links still work" },
+    "demo": { "type": "boolean", "default": false, "description": "true = labelled as demonstration content" },
+    "theme": { "type": ["string", "null"], "maxLength": 40, "x-trim": true, "default": "bounty-gold", "description": "Design id = file name in content/themes (without .json)" },
+    "tagline": { "type": ["string", "null"], "maxLength": 80, "x-trim": true, "description": "Defaults to 'Deadline <date>'" },
+    "challenge": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\S", "x-trim": true },
+    "deadline": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date", "x-trim": true, "description": "Real calendar date in YYYY-MM-DD format; active through this date in Africa/Johannesburg" },
+    "prize": { "type": ["string", "null"], "maxLength": 60, "x-trim": true },
+    "link": { "type": ["string", "null"], "pattern": "^(?:$|[hH][tT][tT][pP][sS]://[^/@\\s]+(?:[/?#]|$))", "format": "https-url", "maxLength": 300, "x-trim": true, "description": "Optional full https:// link without credentials" },
+    "fields": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "projectName": { "type": "boolean", "default": true },
+        "githubUsername": { "type": "boolean", "default": true }
+      }
+    }
+  }
+}
