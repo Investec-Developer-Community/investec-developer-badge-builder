@@ -1,5 +1,20 @@
 import { describe, expect, it } from 'vitest';
+import q4Meetup from '../content/campaigns/meetups/joburg-q4-meetup.json' with { type: 'json' };
 import { campaignMeta, formatDate, roleDisplay, visibleTagline } from '../src/components/campaignMeta';
+import { formatBadgeDate } from '../src/lib/render';
+
+describe('Q4 meetup source', () => {
+  it('has the updated date and unchanged venue details', () => {
+    expect(q4Meetup).toMatchObject({
+      date: '2026-12-08',
+      venue: 'Investec Sandton, 100 Greyston Road',
+      venueShort: 'Investec Sandton',
+      city: 'Johannesburg',
+    });
+    expect(formatDate(q4Meetup.date)).toBe('8 Dec 2026');
+    expect(formatBadgeDate(q4Meetup.date)).toBe('Tuesday 8 December 2026');
+  });
+});
 
 describe('formatDate', () => {
   it('formats ISO dates human-readably without shifting the day', () => {

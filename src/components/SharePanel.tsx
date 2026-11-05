@@ -154,7 +154,7 @@ export function SharePanel({ campaign, snapshot, current }: { campaign: Campaign
         <ol className="share-steps">
           <li>Add the badge image you downloaded.</li>
           <li>Paste the caption.</li>
-          <li>Type @Investec and pick the page to tag us.</li>
+          <li>Type Investec Developer and pick the page to tag us.</li>
         </ol>
         {linkedInCopied && <p className="hint" role="status">Caption copied — paste it into your post.</p>}
         {feedback === 'copied' && <p className="hint" role="status">Caption copied too — paste it if the app leaves the text out.</p>}

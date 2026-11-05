@@ -1,4 +1,7 @@
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it, vi } from 'vitest';
+import { SharePanel } from '../src/components/SharePanel';
 import {
   DEFAULT_HASHTAGS,
   LINKEDIN_SHARE_URL,
@@ -179,6 +182,21 @@ describe('downloaded badge snapshot', () => {
     crop: { x: 0, y: 0, zoom: 1 },
     details: { sessionTitle: 'Cards', projectName: 'Example', githubUsername: 'octocat' },
   };
+
+  it.each([true, false])('renders the LinkedIn tagging steps (current: %s)', (current) => {
+    vi.stubGlobal('window', { location: { origin: 'https://example.com', pathname: '/' } });
+    try {
+      const file = new File(['example PNG'], 'badge.png', { type: 'image/png' });
+      const html = renderToStaticMarkup(createElement(SharePanel, { campaign, snapshot: { file, input }, current }));
+      expect(html).toContain(
+        '<ol class="share-steps"><li>Add the badge image you downloaded.</li>' +
+        '<li>Paste the caption.</li><li>Type Investec Developer and pick the page to tag us.</li></ol>',
+      );
+      expect(html).not.toContain('Type @Investec');
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
 
   it('accepts equivalent input values, including the default square format', () => {
     expect(matchesDownloadedBadge(input, {
