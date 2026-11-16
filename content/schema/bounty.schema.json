@@ -1,4 +1,4 @@
-{
+oney Mpove{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Bounty campaign",
   "type": "object",
@@ -7,7 +7,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "title": { "type": "string", "minLength": 1, "maxLength": 60, "pattern": "\\S", "x-trim": true },
-    "shareTitle": { "type": "string", "minLength": 1, "maxLength": 60, "pattern": "\\S", "x-trim": true, "description": "Optional event name for share captions, e.g. \"Investec Developer IoT Code Bounty\". Defaults to title" },
+    "shareTitle": { "type": "string", "minLength": 1, "maxLength": 60, "pattern": "\\S", "x-trim": true, "description": "Optional event name for share captions, e.g. \"Investec Developer Make Money Move Bounty\". Defaults to title" },
     "status": { "enum": ["draft", "active", "archived", null], "default": "draft", "description": "draft = hidden, active = listed through the deadline, archived = hidden from the list but links still work" },
     "demo": { "type": "boolean", "default": false, "description": "true = labelled as demonstration content" },
     "theme": { "type": ["string", "null"], "maxLength": 40, "x-trim": true, "default": "bounty-gold", "description": "Design id = file name in content/themes (without .json)" },
