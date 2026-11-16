@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/bounty.schema.json",
-  "title": "Make Money Move",
+  "title": "Bounty: Make Money Move",
   "shareTitle": "Investec Developer IoT Code Bounty",
   "status": "active",
   "demo": false,
